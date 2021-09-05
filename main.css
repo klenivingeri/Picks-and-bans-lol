@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+body{
+  background-color: rgb(235, 235, 235);
+}
+.background{
+  position: absolute;
+  z-index: -999;
+  background-color: white;
+  height: calc(100vh - 30px);
+  width: calc(100% - 100px);
+  margin: 15px  50px 15px 50px;
+}
+.container{
+  height: 100vh;
+  width: 100%;
+}
+
+.container header{
+  display: grid;
+  grid-template-columns: 1fr 400px 1fr;
+  height:150px;
+  justify-content: space-between;
+
+}
+.team-blue, .team-red, .time{
+ height: 6rem;
+}
+
+.team-blue, .team-red{
+  display: flex;
+  flex-direction: column;
+}
+.info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.team{
+  display: flex;
+  justify-content: space-between;
+
+}
+.img{
+  margin-top: 20px;
+  width: 5.8rem;
+  height: calc(100% - 20px); 
+}
+.team-blue .img{
+  background-color: blue;
+}
+.team-red .img{
+  background-color: red;
+}
+
+.name{
+  display: flex;
+  align-items: center;
+}
+.name > p{
+  font-size: 1rem;
+}
+
+.team-blue .name-initial > span{
+  color: blue;
+}
+.team-red .name-initial > span{
+  color: red;
+}
+.name-initial > span{
+  position: relative;
+  bottom: -10px;
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-size: 6rem;
+  transform: scale(.8,1.2);
+  font-weight: 500;
+
+}
+.barra-b{
+  width: .9rem;
+  height: calc(95% - 20px);
+  background-color: blue;
+  margin-right: 1.1rem;
+  margin-top: 20px;
+}
+.barra-r{
+  width: .9rem;
+  height: calc(95% - 20px);
+  background-color: red;
+  margin-left: 1.1rem;
+  margin-top: 20px;
+}
+.time-blue, .time-red ,.cblol{
+  display: flex;
+  align-items: center;
+  height: 165px;
+  width: 6.5rem;
+  background-color: black;
+  position: relative;
+}
+
+.time-blue{ /* Tempo */
+  margin-left: 20px;
+  transform: skew(15deg);
+}
+.time-red{ /* Tempo */
+  margin-right: 20px;
+  transform:  skew(-15deg);
+}
+header > .time{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.team-blue{
+ padding: 15px 0 0 50px;
+}
+.team-red{
+  padding: 15px 50px 0 0;
+}
+
+span.time-b, span.time-r{
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-top: 1.9rem;
+
+  color: white;
+  font-weight: 500;
+  font-size: 2.4rem;
+}
+span.time-b{
+
+  margin-left: 23px;
+  transform: skew(-15deg);
+}
+span.time-r{
+  margin-left: 20px;
+  transform: skew(15deg);
+}
+
+.cblol{
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 100px;
+  width: 75px;
+  height: 75px;
+}
+.tec-b{
+  font-size: .8rem;
+  width: 100%;
+  padding-top: 5px;
+  padding-left: 15px;
+}
+.tec-r{
+  font-size: .8rem;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 5px;
+  padding-right: 15px;
+}
+
+/*  <section></section> */
+
+section{
+  display: flex;
+  justify-content: space-between;
+}
+.select-champ{
+  margin: 0 10px;
+}
+.select-champ-center{
+  background: url('./img/logo.png') ;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 360px;
+  width: 100%;
+  background-size: 350px 300px;
+  border: 1px solid rgb(0, 0, 0, .1);
+  border-radius: 5px ;
+
+}
+
+.champion{
+  height: 80px;
+  width: 250px;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(215, 215, 215);
+  margin: 5px 0;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.champion:nth-child(3n){
+  margin-bottom: 30px;
+}
+.spell{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.spell > span {
+  width: 33px;
+  height: 33px;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid rgb(205, 205, 205);
+}
+
+
+.select-champ:nth-child(1n) .champion{
+ box-shadow: 5px 10px 10px rgb(0, 0, 0, .3);
+}
+.select-champ:nth-child(3n) .champion{
+  box-shadow: -5px 10px 10px rgb(0, 0, 0, .3);
+}
+
+.select-champ:nth-child(1n) .champion:hover{
+  box-shadow: 5px 10px 10px rgb(0, 0, 0, .5);
+ }
+ .select-champ:nth-child(3n) .champion:hover{
+   box-shadow: -5px 10px 10px rgb(0, 0, 0, .5);
+ }
+/* footer footer*/
+
+footer{
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.team-f-b{
+  width: 600px;
+  height: 100%;
+  display: flex;
+
+}
+.team-f-r{
+  width: 600px;
+  height: 100%;
+  display: flex;
+ 
+}
+
+.barra-f{
+ width: 35px;
+ height: 100%;
+ font-weight: 500;
+ font-size: 1rem;
+}
+.team-f-b .barra-f > p{
+  transform:rotate(270deg);
+  transform-origin:0 0;
+  position: relative;
+  bottom:-65px;
+  right: -5px; 
+ }
+.team-f-r .barra-f{
+  width: 35px;
+  height: 100%;
+  margin-left: 19px;
+
+ }
+ .team-f-r .barra-f > p{
+  position: relative;
+  bottom:-65px;
+  right: -10px;
+  transform:rotate(270deg);
+  transform-origin:0 0;
+ }
+.ban{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 535px;
+}
+.team-f-b .ban{
+  padding-left: 20px;
+}
+.team-f-r .ban{
+margin-left: 15px;
+}
+
+.team-f-b .ban .ban-champion{
+  height: 75px;
+  width: 75px;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform: skew(20deg);
+  position: relative;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(215, 215, 215);
+  box-shadow: 5px 10px 10px rgb(0, 0, 0, .3);
+}
+.team-f-b .ban .ban-champion:hover{
+  box-shadow: 5px 10px 10px rgb(0, 0, 0, .5);
+}
+.team-f-b .ban .ban-champion > span{
+  position: relative;
+  height: 35px;
+  width: 35px;
+  border-radius: 35px;
+  background: blue;
+  transform: skew(-20deg);
+  bottom: -15px;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(150, 150, 150);
+
+}
+
+.team-f-r .ban .ban-champion{
+  height: 75px;
+  width: 75px;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform: skew(-20deg);
+  position: relative;
+  box-shadow: -5px 10px 10px rgb(0, 0, 0, .3);
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(215, 215, 215);
+}
+.team-f-r .ban .ban-champion:hover{
+  box-shadow: -5px 10px 10px rgb(0, 0, 0, .5);
+}
+.team-f-r .ban .ban-champion > span{
+  position: relative;
+  height: 35px;
+  width: 35px;
+  border-radius: 35px;
+  background: blue;
+  transform: skew(20deg);
+  bottom: -15px;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(150, 150, 150);
+  
+
+}
