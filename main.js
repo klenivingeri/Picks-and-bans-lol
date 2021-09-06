@@ -1,106 +1,24 @@
- var data = [
-   {
-    name: 'Renecton',
-    img: './img/renekton.jpg',
-    position: '-230px 300px',
-    size: '600px',
-    spell1: './img/spell/teleport.jpg',
-    spell2: './img/spell/flash.jpg'
-
-  },
-  {
-    name: 'Trundle',
-    img: './img/trundle.jpg',
-    position: '-230px 300px',
-    size: '600px',
-    spell1: './img/spell/smite.jpg',
-    spell2: './img/spell/flash.jpg'
-  },
-  {
-    name: 'Ziggs',
-    img: './img/ziggs.jpg',
-    position: '-230px 200px',
-    size: '500px',
-    spell1: './img/spell/ignite.jpg',
-    spell2: './img/spell/flash.jpg'
-  },
-  {
-    name: 'Ashe',
-    img: './img/ashe.jpg',
-    position: '-230px 280px',
-    size: '600px',
-    spell1: './img/spell/healt.jpg',
-    spell2: './img/spell/flash.jpg'
-  },
-  {
-    name: 'Braum',
-    img: './img/braum.jpg',
-    position: '300px 320px',
-    size: '600px',
-    spell1: './img/spell/ignite.jpg',
-    spell2: './img/spell/flash.jpg'
-  },
-  {
-    name: 'Gnar',
-    img: './img/gnar.jpg',
-    position: '250px 180px',
-    size: '500px',
-    spell1: './img/spell/teleport.jpg',
-    spell2: './img/spell/flash.jpg'
-  },
-  {
-    name: 'Maokai',
-    img: './img/maokai.jpg',
-    position: '-200px -90px',
-    size: '500px',
-    spell1: './img/spell/smite.jpg',
-    spell2: './img/spell/flash.jpg'
-  },
-  {
-    name: 'Ryze',
-    img: './img/ryze.jpg',
-    position: '-250px 220px',
-    size: '500px',
-    spell1: './img/spell/ignite.jpg',
-    spell2: './img/spell/flash.jpg'
-  },{
-    name: 'Ezreal',
-    img: './img/ezreal.jpg',
-    position: '-230px 300px',
-    size: '600px',
-    spell1: './img/spell/healt.jpg',
-    spell2: './img/spell/flash.jpg'
-  },
-  {
-    name: 'Bardo',
-    img: './img/bardo.jpg',
-    position: '-230px 300px',
-    size: '600px',
-    spell1: './img/spell/ignite.jpg',
-    spell2: './img/spell/flash.jpg'
-  }
- ]
+ import { data, faceChamp } from './data.js'
 
 
 class SelectionChamp{ 
-  constructor(elemento, data){
+  constructor(elemento1,elemento2, data, faceChamp){
     this.championSelect = data
-    this.elemento1 = [...elemento]
-    this.play = 60
+    this.faceChapions = faceChamp
+    this.elemento1 = [...elemento1]
+    this.elemento2 = [...elemento2]
+    this.play = 60;
     this.insertBackground()
     this.time()
+    this.insertBackgroundBanChampion()
   }
   time(){
 
-    setInterval(() => {
+    let tempo = setInterval(() => {
       this.play--
-      document.querySelector('.time-r').innerHTML = `:${this.play}`
-      document.querySelector('.time-b').innerHTML = `:${this.play}`
-      console.log(this.play)
-      if(this.play == 0){
-        clearInterval();
-        console.log('entrou')
-      }
+      document.querySelector('.time-r').innerHTML = this.play >= 10 ? `:${this.play}` : `:0${this.play}`
+      document.querySelector('.time-b').innerHTML = this.play >= 10 ? `:${this.play}` : `:0${this.play}`
+      this.play == 0 ? clearInterval(tempo) : '' ;
     }, 1000);
 
   }
@@ -120,7 +38,17 @@ class SelectionChamp{
       }
     })
   }
-
+  insertBackgroundBanChampion(){
+    [...this.elemento2].forEach((el, index)=>{
+      el.style.backgroundImage = `url('${this.faceChapions[index].img}')`;
+      el.style.backgroundPosition = this.faceChapions[index].position;
+      el.style.backgroundSize = this.faceChapions[index].size;
+    })
+  }
 }
 
-let selection = new SelectionChamp(document.querySelectorAll('.champion'), data);
+let selection = new SelectionChamp(
+  document.querySelectorAll('.champion'),
+  document.querySelectorAll('.ban-champion'),
+  data, 
+  faceChamp);
