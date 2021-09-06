@@ -55,10 +55,14 @@ body{
   height: calc(100% - 20px); 
 }
 .team-blue .img{
-  background-color: blue;
+  background-image: url('./img/time.png');
+  background-size: 500px;
+  background-position: -16px -15px;
 }
 .team-red .img{
-  background-color: red;
+  background-image: url('./img/time.png');
+  background-size: 500px;
+  background-position: -12px 120px;
 }
 
 .name{
@@ -105,10 +109,12 @@ body{
   align-items: center;
   height: 165px;
   width: 6.5rem;
-  background-color: black;
+
   position: relative;
 }
-
+.time-blue, .time-red {
+background-color: black;
+}
 .time-blue{ /* Tempo */
   margin-left: 20px;
   transform: skew(15deg);
@@ -152,9 +158,10 @@ span.time-r{
 }
 
 .cblol{
-  background-color: transparent;
-  border: 2px solid black;
-  border-radius: 100px;
+  background-image: url('./img/logo-icon.png');
+  background-size: 75px;
+  background-position: -0px 0px;
+
   width: 75px;
   height: 75px;
 }
@@ -186,7 +193,7 @@ section{
   background: url('./img/logo.png') ;
   background-repeat: no-repeat;
   background-position: center;
-  height: 360px;
+  height: 460px;
   width: 100%;
   background-size: 350px 300px;
   border: 1px solid rgb(0, 0, 0, .1);
@@ -198,13 +205,16 @@ section{
   height: 80px;
   width: 250px;
   background-color: rgb(245, 245, 245);
-  border: 1px solid rgb(215, 215, 215);
+  border: 1px solid rgb(100, 100, 100);
   margin: 5px 0;
   padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-}
+  }
+  .champion p {
+    color: white;
+  }
 .champion:nth-child(3n){
   margin-bottom: 30px;
 }
@@ -230,9 +240,11 @@ section{
 
 .select-champ:nth-child(1n) .champion:hover{
   box-shadow: 5px 10px 10px rgb(0, 0, 0, .5);
+  transition:  all 0.3s ease-out;
  }
  .select-champ:nth-child(3n) .champion:hover{
    box-shadow: -5px 10px 10px rgb(0, 0, 0, .5);
+   transition:  all 0.3s ease-out;
  }
 /* footer footer*/
 
@@ -335,6 +347,7 @@ margin-left: 15px;
   box-shadow: -5px 10px 10px rgb(0, 0, 0, .3);
   background-color: rgb(245, 245, 245);
   border: 1px solid rgb(215, 215, 215);
+  transition:  all 0.3s ease-out;
 }
 .team-f-r .ban .ban-champion:hover{
   box-shadow: -5px 10px 10px rgb(0, 0, 0, .5);
@@ -349,6 +362,5 @@ margin-left: 15px;
   bottom: -15px;
   background-color: rgb(245, 245, 245);
   border: 1px solid rgb(150, 150, 150);
-  
-
+  transition:  all 0.3s ease-out;
 }
